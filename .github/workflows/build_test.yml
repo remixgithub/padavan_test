@@ -1,13 +1,13 @@
 name: test
-on: workflow_dispatch
+on: push
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - name: apt-get
       run: |
-        apt-get update
-        apt-get upgrade -y
+        sudo apt-get update
+        sudp apt-get upgrade -y
     - name: firmware
       run: |
         git clone https://github.com/remixgithub/padavan_test.git
