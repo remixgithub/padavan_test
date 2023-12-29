@@ -15,6 +15,7 @@ jobs:
         cp -a padavan_test/padavan-ng/. padavan-ng/
         mv padavan-ng/trunk/r3g.config padavan-ng/trunk/.config
         cd padavan-ng
+        git config user.email anon@anon.anon
         git revert e076679ce081c2cedc3450b5933f995e910f1760 --no-edit
         git revert b6129b5502851bfabe6b0700219072cdf34effcf --no-edit
         chmod +x dl_toolchain.sh
