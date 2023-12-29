@@ -2,7 +2,7 @@ name: test
 on: workflow_dispatch
 jobs:
   build:
-    runs-on: linux-latest
+    runs-on: ubuntu-latest
     steps:
     - name: apt-get
       run: |
