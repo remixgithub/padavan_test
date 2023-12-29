@@ -7,7 +7,7 @@ jobs:
     - name: apt-get
       run: |
         sudo apt-get update
-        sudp apt-get upgrade -y
+        sudo apt-get upgrade -y
     - name: firmware
       run: |
         git clone https://github.com/remixgithub/padavan_test.git
