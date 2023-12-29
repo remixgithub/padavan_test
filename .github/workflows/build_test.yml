@@ -1,13 +1,9 @@
-name: test
-on: push
+name: build
+on: workflow_dispatch
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: apt-get
-      run: |
-        sudo apt-get update
-        sudo apt-get upgrade -y
     - name: firmware
       run: |
         git clone https://github.com/remixgithub/padavan_test.git
@@ -15,8 +11,7 @@ jobs:
         cp -a padavan_test/padavan-ng/. padavan-ng/
         mv padavan-ng/trunk/r3g.config padavan-ng/trunk/.config
         cd padavan-ng
-        git config --global user.email "anon@anon.anon"
-        git config --global user.name "anon anon"
+        git config user.email anon@anon.anon
         git revert e076679ce081c2cedc3450b5933f995e910f1760 --no-edit
         git revert b6129b5502851bfabe6b0700219072cdf34effcf --no-edit
         chmod +x dl_toolchain.sh
